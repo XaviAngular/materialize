@@ -1,0 +1,102 @@
+  <!DOCTYPE html>
+  <html lang="ES-es">
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	  <style>	  	 
+      html, body, .block {
+        height: 100%!important;
+      }
+      nav ul li a:hover, nav ul li a.active {
+        background-color: rgba(0,0,0,.1);
+      }
+      footer {
+        padding-left: 0;
+      }
+      // Class for when element is above threshold
+		  .pin-top {
+		    position: relative;
+		  }
+
+		  // Class for when element is below threshold
+		  .pin-bottom {
+		    position: relative;
+		  }
+
+		  // Class for when element is pinned
+		  .pinned {
+		    position: fixed !important;
+		  }    
+	  </style>
+    </head>
+    <body class="purple lighten-5">
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script>
+		$(document).ready(function(){
+		    $('.target').pushpin({
+		      top: 0,
+		      bottom: 1000,
+		      offset: 0
+		    });
+		    $('.pushpin-demo-nav').each(function() {
+		    var $this = $(this);
+		    var $target = $('#' + $(this).attr('data-target'));
+		    $this.pushpin({
+		      top: $target.offset().top,
+		      bottom: $target.offset().top + $target.outerHeight() - $this.height()
+		    });
+		  });
+		  });
+	  </script>
+			<div id="blue" class="block blue">
+			  <nav class="pushpin-demo-nav pinned" data-target="blue" style="top: 0px;">
+			    <div class="nav-wrapper light-blue">
+			      <div class="container">
+			        <a href="#" class="brand-logo">Blue</a>
+			        <ul id="nav-mobile" class="right hide-on-med-and-down">
+			          <li><a href="#!">Blue Link 1</a></li>
+			          <li><a href="#!">Blue Link 2</a></li>
+			          <li><a href="#!">Blue Link 3</a></li>
+			        </ul>
+			      </div>
+			    </div>
+			  </nav>
+			</div>
+			<div id="red" class="block red lighten-1">
+			  <nav class="pushpin-demo-nav pin-top" data-target="red" style="top: 0px;">
+			    <div class="nav-wrapper red">
+			      <div class="container">
+			        <a href="#" class="brand-logo">Red</a>
+			        <ul id="nav-mobile" class="right hide-on-med-and-down">
+			          <li><a href="#!">Red Link 1</a></li>
+			          <li><a href="#!">Red Link 2</a></li>
+			          <li><a href="#!">Red Link 3</a></li>
+			        </ul>
+			      </div>
+			    </div>
+			  </nav>
+			</div>
+			<div id="green" class="block green lighten-1">
+			  <nav class="pushpin-demo-nav pin-top" data-target="green" style="top: 0px;">
+			    <div class="nav-wrapper green">
+			      <div class="container">
+			        <a href="#" class="brand-logo">Green</a>
+			        <ul id="nav-mobile" class="right hide-on-med-and-down">
+			          <li><a href="#!">Green Link 1</a></li>
+			          <li><a href="#!">Green Link 2</a></li>
+			          <li><a href="#!">Green Link 3</a></li>
+			        </ul>
+			      </div>
+			    </div>
+			  </nav>
+			</div>
+				
+
+    </body>
+  </html>

@@ -14,8 +14,15 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script>
-      $(document).ready(function() {
+  $(document).ready(function() {
     $('select').material_select();
+
+    $("#addEmpresa").submit(function(){
+      event.preventDefault();//Evita el refresh automático que se produce al enviar el form
+      console.log("Se va a enviar el form");//se muestra por consola este mensaje para verificar que se produce el evento de submit.
+      var serializado = $("#addEmpresa").serialize();
+      console.log("Formulario serializado:"+serializado);
+    });
   });      
     </script>      
 	  <div class="container">
@@ -64,9 +71,7 @@
 <div class="col s12 m6 l6 input-field">
    <input id="telf" type="tel" name="telf" class="validate" pattern="[0-9]{9}">
     <label for="telf">Teléfono</label>
-  </div>
-
-  
+  </div>  
       </div>
 <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
     <i class="material-icons right">send</i>

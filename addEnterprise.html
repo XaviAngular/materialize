@@ -17,11 +17,12 @@
   $(document).ready(function() {
     $('select').material_select();
 
-    $("#addEmpresa").submit(function(){
+    $("#addEmpresa").submit(function(event){
       event.preventDefault();//Evita el refresh automático que se produce al enviar el form
       console.log("Se va a enviar el form");//se muestra por consola este mensaje para verificar que se produce el evento de submit.
       var serializado = $("#addEmpresa").serialize();
       console.log("Formulario serializado:"+serializado);
+      
     });
   });      
     </script>      
@@ -29,33 +30,33 @@
       <div class="row">
       <form id="addEmpresa">
        <div class="col s12 m6 l6 input-field">
-       <input id="nEmpresa" type="text" name="nEmpresa" class="validate" maxlength="100" required>
+       <input id="nEmpresa" type="text" name="nEmpresa" class="validate" maxlength="100" value="Pintogama S.L" required>
         <label for="nEmpresa">Nombre Empresa</label>
        </div>
 
        <div class="col s12 m6 l6 input-field">
-       <input id="cif" type="text" name="cif" class="validate" maxlength="12" pattern="(([A-Za-z]{1})([-]?)([0-9]{8}))">
+       <input id="cif" type="text" name="cif" class="validate" maxlength="12" pattern="(([A-Za-z]{1})([-]?)([0-9]{8}))" value="G-67382737" required>
         <label data-error="CIF Incorrecto" for="cif">CIF</label>
        </div>
        <div class="col s12 m6 l6 input-field">
-       <input placeholder="Calle/Avda/Rambla número y piso" id="direccion" type="text" name="direccion" class="validate" maxlength="100">
+       <input placeholder="Calle/Avda/Rambla número y piso" id="direccion" type="text" name="direccion" class="validate" maxlength="100" value="Carrer del pi, 45" required>
         <label for="direccion">Dirección</label>
        </div>
 
        <div class="col s12 m6 l6 input-field">
-       <input maxlength="5" id="cp" type="text" name="cp" class="validate" pattern="[0-9]{5}">
+       <input maxlength="5" id="cp" type="text" name="cp" class="validate" pattern="[0-9]{5}" value="08810" required>
         <label for="cp" data-error="Error Código Postal">CP</label>
        </div>
 
       <div class="col s12 m6 l6 input-field">
-       <input id="poblacion" type="text" name="poblacion" class="validate" maxlength="100">
+       <input id="poblacion" type="text" name="poblacion" class="validate" maxlength="100" value="Canyelles" required>
         <label for="poblacion">Población</label>
        </div>
 
   <div class="col s12 m6 l6 input-field">
     <select>
-      <option value="" disabled selected>Província</option>
-      <option value="Barcelona">Barcelona</option>
+      <option value="" disabled>Província</option>
+      <option value="Barcelona" selected>Barcelona</option>
       <option value="Tarragona">Tarragona</option>
       <option value="Lleida">Lleida</option>
       <option value="Girona">Girona</option>
@@ -64,12 +65,12 @@
   </div>
 
   <div class="col s12 m6 l6 input-field">
-   <input id="email" type="email" name="email" class="validate" maxlength="100">
+   <input id="email" type="email" name="email" class="validate" maxlength="100" value="lalala@mooo.com">
     <label for="email">Email</label>
   </div>
 
 <div class="col s12 m6 l6 input-field">
-   <input id="telf" type="tel" name="telf" class="validate" pattern="[0-9]{9}">
+   <input id="telf" type="tel" name="telf" class="validate" pattern="[0-9]{9}" value="789878765">
     <label for="telf">Teléfono</label>
   </div>  
       </div>

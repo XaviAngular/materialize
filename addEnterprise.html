@@ -12,7 +12,12 @@
     <body class="purple lighten-5">
       <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>       
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function() {
+    $('select').material_select();
+  });      
+    </script>      
 	  <div class="container">
       <div class="row">
 
@@ -35,6 +40,31 @@
         <label for="cp" data-error="Error Código Postal">CP</label>
        </div>
 
+      <div class="col s12 m6 l6 input-field">
+       <input id="poblacion" type="text" name="poblacion" class="validate" maxlength="100">
+        <label for="poblacion">Población</label>
+       </div>
+
+  <div class="col s12 m6 l6 input-field">
+    <select>
+      <option value="" disabled selected>Província</option>
+      <option value="Barcelona">Barcelona</option>
+      <option value="Tarragona">Tarragona</option>
+      <option value="Lleida">Lleida</option>
+      <option value="Girona">Girona</option>
+    </select>
+    <label>Província</label>
+  </div>
+
+  <div class="col s12 m6 l6 input-field">
+   <input id="email" type="email" name="email" class="validate" maxlength="100">
+    <label for="email">Email</label>
+  </div>
+
+<div class="col s12 m6 l6 input-field">
+   <input id="telf" type="tel" name="telf" class="validate" pattern="[0-9]{9}">
+    <label for="telf">Teléfono</label>
+  </div>
 
       </div>		
     </div>

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var debug=false;
+    var debug=true;
     $('select').material_select();
     $("#addEmpresa").submit(function(event){
       event.preventDefault();//Evita el refresh automático que se produce al enviar el form
@@ -14,6 +14,20 @@ $(document).ready(function() {
       if (debug) console.log("Formulario serializado en array:");
       if (debug) console.log(serializadoArray);
 
+      //esta es la forma de obtener datos del formulario y 
+      //convertirlo en formato JSON
+      var jsonData= JSON.stringify($("#addEmpresa").serializeArray());
+      if (debug) console.log("Datos en Json:");
+      if (debug) console.log(jsonData);
+      $.ajax({
+        url: '/php/recibeJson.php',
+        type: 'POST',
+        dataType: 'json',
+        data: jsonData,
+        success : function(result){},
+        error: function(result){}
+      })
       
+
     });    
 });     

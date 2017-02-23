@@ -20,12 +20,16 @@ $(document).ready(function() {
       if (debug) console.log("Datos en Json:");
       if (debug) console.log(jsonData);
       $.ajax({
-        url: '/php/recibeJson.php',
+        url: 'php/recibeJson.php',
         type: 'POST',
         dataType: 'json',
         data: jsonData,
-        success : function(result){},
-        error: function(result){}
+        success : function(result){
+          if (debug) console.log(result.resultado);
+        },
+        error: function(result){
+          alert("errorrrrrr!!!");
+        }
       })
       
 

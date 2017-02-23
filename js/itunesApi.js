@@ -17,8 +17,6 @@ $(document).ready(function(){
                     // you can see the result from the console
                     // tab of the developer tools
                     if (debug) console.log(result.results);
-                    var tbl_body = document.createElement("tbody");
-                    var odd_even = false;
                     var groupedData = _.groupBy(result.results, function(d){return d.collectionName});
                     console.log(groupedData);
                     $.each(groupedData, function() {                         

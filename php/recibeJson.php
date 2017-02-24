@@ -9,9 +9,11 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
 	$valores="'";
 	$campos="";
 	foreach ($datos as $key => $value){
-		$campos .= $value['name'].',';
-$valores.= $value['value']."','";
-	}	
+	$campos .= $value['name'].',';
+	$valores.= $value['value']."','";
+	}
+	$campos = substr($campos,0, -1);
+	$valores = substr($valores,0, -2);
 
 echo json_encode([
 		"campos" => $campos,

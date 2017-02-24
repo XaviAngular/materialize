@@ -6,20 +6,24 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
 	$request= file_get_contents('php://input');
 	//Para convertir un Json en un array de php
 	$datos = json_decode($request,true);
-
-	
+	$valores="";
+	$campos="";
+	foreach ($datos as $key => $value){
+		$campos .= $value['name'];
+		$valores.= $value['value'];
+	}	
 
 echo json_encode([
-		"resultado" => "ok",
+		"campos" => $campos,
 		"error"		=> 0,
-		"testeo"	=> $datos
+		"valores"	=> $valores
 	]);
 }
 else {
 echo json_encode([
-		"resultado" => "KO",
+		"campos" => "KO",
 		"error"		=> 1,
-		"testeo"	=> $test
+		"valores"	=> $test
 	]);
 }
 ?>

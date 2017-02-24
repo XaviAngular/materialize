@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var debug=true;
+    var debug=false;
     $('select').material_select();
     $("#addEmpresa").submit(function(event){
       event.preventDefault();//Evita el refresh automático que se produce al enviar el form
@@ -25,8 +25,8 @@ $(document).ready(function() {
         dataType: 'json',
         data: jsonData,
         success : function(result){
-          if (debug) console.log(result.campos);
-          if (debug) console.log(result.valores);
+          console.log(result.sql);
+          
         },
         error: function(result){
           alert("errorrrrrr!!!");

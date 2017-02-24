@@ -25,7 +25,8 @@ $(document).ready(function() {
         dataType: 'json',
         data: jsonData,
         success : function(result){
-          if (debug) console.log(result.testeo);
+          if (debug) console.log(result.campos);
+          if (debug) console.log(result.valores);
         },
         error: function(result){
           alert("errorrrrrr!!!");
